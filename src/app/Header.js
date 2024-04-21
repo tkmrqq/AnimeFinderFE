@@ -30,7 +30,6 @@ const Header = () => {
                 </Link>
                 <input value={inputValue} onChange={handleInputChange} type="text" name="search" placeholder="search" className='searchInput' onKeyDown={handleKeyDown}></input>
                 <button type="submit" className=""></button>
-                <Link href='/admin'>Admin</Link>
             </nav>
         </header>
     )

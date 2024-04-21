@@ -97,7 +97,7 @@ const AddAnime = ({ animeData, handleFormSubmit }) => {
                 <input defaultValue={anime.picUrl} type="url" name="picUrl" onChange={(e) => handleChange(e, 'picUrl')} placeholder="Picture URL" required />
                 {anime.genres.map((genre, i) => (
                     <div key={i}>
-                        <input type="text" value={genre.name} onChange={(e) => handleChange(e, 'genres', i)} placeholder={`Genre ${i + 1}`} required />
+                        <input type="text" value={genre.name} onChange={(e) => handleChange(e, 'genres', i, 'name')} placeholder={`Genre ${i + 1}`} required />
                         {i === anime.genres.length - 1 && <button type="button" onClick={() => handleAdd('genres')}>Добавить жанр</button>}
                     </div>
                 ))}

@@ -8,11 +8,12 @@ import LineChart from '../src/app/linecharts'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 import add from '../public/add.svg';
 import del from '../public/delete.svg';
 import edit from '../public/edit.svg';
-import axios from 'axios'
+import gif from '../public/aboba.gif'
 
 const AdminPanel = () => {
     const [animeList, setAnimeList] = useState([]);
@@ -37,7 +38,8 @@ const AdminPanel = () => {
 
     const tabs = [
         { label: 'Anime list', content: <AnimeListPanel animeList={animeList} togglePopup={togglePopup} setAnimeToEdit={setAnimeToEdit} /> },
-        { label: 'Dashboard', content: <div></div> }
+        { label: 'Dashboard', content: <DashboardPanel/>},
+        { label: 'Add anime', content: <AddAnime handleSubmit={handleSubmit}/>}
     ];
 
     return (
@@ -61,6 +63,15 @@ const AdminPanel = () => {
 }
 
 export default AdminPanel;
+
+const DashboardPanel = () => {
+    return(
+        <div>
+            <span className='text-3xl font-bold'>There is nothing yet!</span>
+            <Image src={gif} alt='aboba'/>
+        </div>
+    )
+}
 
 const StatisticPanel = () => {
     return (
