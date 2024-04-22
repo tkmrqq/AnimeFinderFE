@@ -21,7 +21,7 @@ const AdminPanel = () => {
     const [animeToEdit, setAnimeToEdit] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/all')
+        axios.get(`${process.env.REACT_APP_API_URL}/all`)
             .then(response => setAnimeList(response.data))
             .catch(error => console.error('Ошибка:', error));
     }, []);
