@@ -129,7 +129,7 @@ const DeleteButton = ({ animeName }) => {
     const handleClick = async () => {
         if (window.confirm("Are u sure?")) {
             try {
-                const response = await axios.delete(`http://localhost:8080/delete?title=${animeName}`);
+                const response = await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/delete?title=${animeName}`);
                 console.log(response.data);
             } catch (error) {
                 console.error('There was a problem with the axios operation: ' + error.message);
