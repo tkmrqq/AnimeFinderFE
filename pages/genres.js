@@ -12,7 +12,7 @@ const GenreList = () => {
     const { query } = router;
     const genreName = query.genre || '';
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/genres/` + genreName)
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/genres/` + genreName)
             .then(response => setAnimeList(response.data))
             .catch(error => console.error('Ошибка:', error));
     }, []);

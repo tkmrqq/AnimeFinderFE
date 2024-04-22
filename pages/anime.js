@@ -19,7 +19,7 @@ const AnimeInfo = () => {
     const animeTitle = searchParams.get('title');
     if (animeTitle) {
       console.log(animeTitle)
-      axios.get(`${process.env.REACT_APP_API_URL}/anime?title=` + animeTitle)
+      axios.get(`${process.env.NEXT_PUBLIC_API_URL}/anime?title=` + animeTitle)
         .then(response => {
           setAnimeData(response.data);
         })

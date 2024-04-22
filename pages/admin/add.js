@@ -48,11 +48,11 @@ const AddAnime = ({ animeData, handleFormSubmit }) => {
         try {
             console.log(anime);
             if (animeData) {
-                const response = await axios.put(`${process.env.REACT_APP_API_URL}/put?title=${encodeURIComponent(anime.name)}`, anime);
+                const response = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/put?title=${encodeURIComponent(anime.name)}`, anime);
                 alert("Successfully updated");
                 console.log(response.data);
             } else {
-                const response = await axios.post(`${process.env.REACT_APP_API_URL}/post`, anime);
+                const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/post`, anime);
                 alert("Successfully added");
                 console.log(response.data);
             }
